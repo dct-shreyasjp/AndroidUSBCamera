@@ -3,9 +3,9 @@
 
 # AUSBC&ensp;[![](https://jitpack.io/v/jiangdongguo/AndroidUSBCamera.svg)](https://jitpack.io/#jiangdongguo/AndroidUSBCamera) [![API](https://img.shields.io/badge/API-19%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=19)
 
-&emsp;Flexible and useful UVC camera engine on Android platform, you can use it to simply  open your uvc camera (supporting multi-road cameras) without  any system permissions . The only thing you should do is that confirming your Android device must support OTG function. So, welcom to use **AUSBC3.0** and welcom to **star** & **fork** & **issues**!
+&emsp;Flexible and useful UVC camera engine on Android platform, you can use it to simply  open your uvc camera (supporting multiplex cameras) without  any system permissions . The only thing you should do is that confirming your Android device must support OTG function. So, welcom to use **AUSBC3.0** and welcom to **star** & **fork** & **issues**!
 
-![multi-road camera](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/75a8f700d97c4de4979c9d0927764af9~tplv-k3u1fbpfcp-watermark.image?)
+![multiplex camera](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/75a8f700d97c4de4979c9d0927764af9~tplv-k3u1fbpfcp-watermark.image?)
 
 &emsp;[@ Example showing](https://live.csdn.net/v/226993)
 
@@ -14,11 +14,11 @@
 Feature
 -------
 
-- Support opening multi-road camera;
+- Support opening multiplex camera;
 - Support opening uvc camera on Android 4.4+;
 - Support previewing 480p、720p、1080p，etc;
 - Support adding effects with OpenGL ES 2.0;
-- Support capture photo(`.jpg`)、viedo(`.mp4`/`.h264`/`yuv`) and audio(`pcm`/`mp3`/`aac`)
+- Support capture photo(`.jpg`)、video(`.mp4`/`.h264`/`yuv`) and audio(`pcm`/`mp3`/`aac`)
 - Support rotating camera view;
 - Support offscreen rendering;
 - Support recording media along with acquiring YUV/RGBA/PCM/H.264/AAC stream, you can push it to your media server;
@@ -212,9 +212,9 @@ updateRenderEffect(classifyId, effect)
 
 &emsp;At last, If you want to realize streaming, maybe **IPusher** and **AusbcPusher** can help you.
 
-- open multi-road camera
+- open multiplex camera
 
-&emsp;If you want to open multi-road camera, you can make your Fragment or Activity extend **MultiCameraFragment** or **MultiCameraActivity**.Just do like this and more details please look up **DemoMultiCameraFragment**：
+&emsp;If you want to open multiplex camera, you can make your Fragment or Activity extend **MultiCameraFragment** or **MultiCameraActivity**.Just do like this and more details please look up **DemoMultiCameraFragment**：
 
 ```kotlin
 class DemoMultiCameraFragment : MultiCameraFragment(), ICameraStateCallBack {
@@ -327,7 +327,7 @@ Homepage & Help
 
 
 &emsp;If you have any question or fun ideas, please issues to me.  
-&emsp;Of course, you can also send me a **微信**   "`laojiang299`"   or a **EMAIL**  "`765067602@qq.com`".   
+&emsp;Of course, you can also send me a **Wechat**   "`laojiang299`"   or a **EMAIL**  "`765067602@qq.com`".   
 
 &emsp;So, do not forget to send logs from location **Android/data/com.jiangdg.ausbc/files** and collect logcat information by executing command `adb shell logcat -v threadtime > usbcamera.log`
 
