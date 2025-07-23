@@ -358,3 +358,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+[![](https://jitpack.io/v/NguyenHuy2003/AndroidUSBCamera.svg)](https://jitpack.io/#NguyenHuy2003/AndroidUSBCamera)
