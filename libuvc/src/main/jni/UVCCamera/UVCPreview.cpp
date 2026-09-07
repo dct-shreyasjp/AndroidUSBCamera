@@ -173,19 +173,17 @@ int UVCPreview::setPreviewSize(int width, int height, int min_fps, int max_fps, 
 	ENTER();
 	
 	int result = 0;
-	if ((requestWidth != width) || (requestHeight != height) || (requestMode != mode)) {
-		requestWidth = width;
-		requestHeight = height;
-		requestMinFps = min_fps;
-		requestMaxFps = max_fps;
-		requestMode = mode;
-		requestBandwidth = bandwidth;
+	requestWidth = width;
+	requestHeight = height;
+	requestMinFps = min_fps;
+	requestMaxFps = max_fps;
+	requestMode = mode;
+	requestBandwidth = bandwidth;
 
-		uvc_stream_ctrl_t ctrl;
-		result = uvc_get_stream_ctrl_format_size_fps(mDeviceHandle, &ctrl,
-			!requestMode ? UVC_FRAME_FORMAT_YUYV : UVC_FRAME_FORMAT_MJPEG,
-			requestWidth, requestHeight, requestMinFps, requestMaxFps);
-	}
+	uvc_stream_ctrl_t ctrl;
+	result = uvc_get_stream_ctrl_format_size_fps(mDeviceHandle, &ctrl,
+		!requestMode ? UVC_FRAME_FORMAT_UNCOMPRESSED : UVC_FRAME_FORMAT_MJPEG,
+		requestWidth, requestHeight, requestMinFps, requestMaxFps);
 	
 	RETURN(result, int);
 }
@@ -487,7 +485,7 @@ int UVCPreview::prepare_preview(uvc_stream_ctrl_t *ctrl) {
 
 	ENTER();
 	result = uvc_get_stream_ctrl_format_size_fps(mDeviceHandle, ctrl,
-		!requestMode ? UVC_FRAME_FORMAT_YUYV : UVC_FRAME_FORMAT_MJPEG,
+		!requestMode ? UVC_FRAME_FORMAT_UNCOMPRESSED : UVC_FRAME_FORMAT_MJPEG,
 		requestWidth, requestHeight, requestMinFps, requestMaxFps
 	);
 	if (LIKELY(!result)) {
